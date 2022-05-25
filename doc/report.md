@@ -498,13 +498,38 @@ def image_classify(image_data):
 
 ## 5. Future Work
 
-
-
-
-
-
+- Improve image classification accuracy. Inception V3's image classification label information is specific to the category of the thing itself, such as pit bulls, rather than being directly classified as dogs. This leads to unreliable querying by tag.
+- Improve the front-end interface, than the picture rotation map, user registration and login, etc.
+- Improve the speed of search. Currently, MySQL is used to store image classification data, which is too inefficient for retrieving information from tags, which requires fuzzy queries in the database. ElasticSearch can be used to store image classification information to improve the efficiency of retrieval and clustering analysis.
 
 ## 6. How to run
 
 - clone
 
+```shell
+git clone git@github.com:lif314/pixels-ImageCMS.git
+```
+
+- create database `piexls_cms`, run the sql script in the `sql` directory to import the data. The configuration information is in the `MysqlDb.py` file
+
+- Install python dependencies
+
+```shell
+pip install -r requirements.txt
+```
+
+- Run falsk project
+
+```shell
+python run app.py
+```
+
+- Running the Vue project.
+
+```shell
+cd pixels-ui
+
+npm install
+
+npm run serve
+```
