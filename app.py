@@ -21,7 +21,7 @@ UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-@app.route("/")
+@app.route("/login")
 def hello_world():
     return "<p>Hello, World!</p>"
 
@@ -93,10 +93,9 @@ def count_tags():
         tags.extend(image['tags'].split(", "))
     return Counter(tags)
 
-
 # 预计算数据
 tagDict = count_tags()
-print(tagDict)
+# print(tagDict)
 
 
 # 获取所有的标签信息
